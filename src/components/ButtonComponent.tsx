@@ -33,7 +33,6 @@ const mapDispatchToProps = {
 
 // ✅ Fix the typing for connect
 const connector = connect(mapStateToProps, mapDispatchToProps);
-type ReduxProps = ConnectedProps<typeof connector>;
 
 // ✅ Ensure correct typing when exporting
 export default connector(ButtonComponent);
