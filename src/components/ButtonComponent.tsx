@@ -1,5 +1,5 @@
 import React from "react";
-import { connect, ConnectedProps } from "react-redux";
+import { connect } from "react-redux";
 import { updateStatus } from "../store/reducers/statusReducer";
 import { RootState } from "../store/store";
 
@@ -21,18 +21,14 @@ const ButtonComponent: React.FC<Props> = ({ status, updateStatus }) => {
   );
 };
 
-// ✅ Correct typing for mapStateToProps
 const mapStateToProps = (state: RootState) => ({
   status: state.status.status,
 });
 
-// ✅ Correct typing for mapDispatchToProps
 const mapDispatchToProps = {
   updateStatus,
 };
 
-// ✅ Fix the typing for connect
 const connector = connect(mapStateToProps, mapDispatchToProps);
 
-// ✅ Ensure correct typing when exporting
 export default connector(ButtonComponent);
